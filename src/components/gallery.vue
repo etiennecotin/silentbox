@@ -6,6 +6,7 @@
       :key="image.src"
       @click="openOverlay(image, index)"
       class="silentbox-item"
+      :class="imageClass"
     >
       <slot
           name="silentbox-item"
@@ -45,6 +46,7 @@ export default {
         return []
       }
     },
+    
     image: {
       type: Object,
       default: () => {
@@ -59,6 +61,10 @@ export default {
           description: ''
         }
       }
+    },
+    imageClass: {
+      type: String,
+      default: ''
     }
   },
   components: {
